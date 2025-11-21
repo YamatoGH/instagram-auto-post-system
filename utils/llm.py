@@ -51,8 +51,7 @@ def run_gpt(
     history: Optional[Sequence[ChatMessage]] = None,
     *,
     model: str = DEFAULT_MODEL,
-    temperature: float = 0.7,
-    max_tokens: Optional[int] = None,
+    max_completion_tokens: Optional[int] = None,
 ) -> str:
     """
     Call GPT5-nano with the given prompt and conversation history and return the text reply.
@@ -68,8 +67,7 @@ def run_gpt(
     response = client.chat.completions.create(
         model=model,
         messages=messages,
-        temperature=temperature,
-        max_tokens=max_tokens,
+        max_completion_tokens=max_completion_tokens,
     )
     return response.choices[0].message.content.strip()
 
@@ -79,8 +77,7 @@ def run_gpt_json(
     history: Optional[Sequence[ChatMessage]] = None,
     *,
     model: str = DEFAULT_MODEL,
-    temperature: float = 0.2,
-    max_tokens: Optional[int] = None,
+    max_completion_tokens: Optional[int] = None,
     parse_json: bool = True,
 ):
     """
@@ -100,8 +97,7 @@ def run_gpt_json(
     response = client.chat.completions.create(
         model=model,
         messages=messages,
-        temperature=temperature,
-        max_tokens=max_tokens,
+        max_completion_tokens=max_completion_tokens,
         response_format={"type": "json_object"},
     )
     content = response.choices[0].message.content.strip()
