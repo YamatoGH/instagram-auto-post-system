@@ -58,10 +58,10 @@ auto_post_instagram(user_input, image_paths, templates)
 ## 依存関係ダイアグラム
 ```mermaid
 flowchart TD
-  IN[Input<br/>business_type/title/direction<br/>image paths/templates] --> TS[run_template_selector]
+  IN[Input (business_type/title/direction, image paths, templates)] --> TS[run_template_selector]
   TS --> CP[run_caption_planner]
-  CP --> RAG[RAG<br/>web_rag_search → Serper API]
+  CP --> RAG[RAG: web_rag_search -> Serper API]
   CP --> CW[run_caption_writer]
   RAG --> CW
-  CW --> OUT[投稿 (Instagram への投稿)]
+  CW --> OUT[投稿]
 ```
