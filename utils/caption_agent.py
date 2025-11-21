@@ -81,7 +81,7 @@ def run_caption_planner(
     user_input: Dict[str, Any],
     templates_json: Dict[str, Any],
     *,
-    model: str = "gpt-5-nano",
+    model: str = "gpt-4.1-mini",
 ):
     """
     module to get caption plan from template and user input.
