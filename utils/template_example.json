@@ -1,200 +1,80 @@
 {
   "categories": [
-    {
-      "name": "product",
-      "caption_structure": [
-        "一言キャッチ（印象・特徴）",
-        "商品の概要（名前・ジャンル）",
-        "特徴（こだわり・メリット・素材・機能など）",
-        "使用感やレビュー的ポイント",
-        "おすすめの使い方・対象",
-        "まとめ（推しポイント・締め）",
+   {
+    "name": "spiritual_location",
+    "caption_structure": [
+        "イントロキャッチ",
+        "場所の特徴",
+        "通常の観光地と異なる点",
+        "体験内容",
+        "得られる感情・気づき",
+        "締めメッセージ",
         "ハッシュタグ"
-      ],
-      "writing_style": {
-        "tone": "casual",
-        "emoji_usage": "0〜2個",
-        "sentence_length": "短め〜中",
-        "formatting": "重要箇所を行間で強調",
-        "punctuation": "句点あり"
-      },
-      "hashtag_pattern": [
-        "#商品名",
-        "#ジャンル",
-        "#用途タグ",
-        "#地域名（任意）"
-      ],
-      "example_structure": [
-        "① 最初の一言（強み）",
-        "② 商品の概要説明",
-        "③ 特徴・メリット",
-        "④ 使用感・評価",
-        "⑤ こんな人におすすめ",
-        "⑥ #商品タグ"
-      ],
-      "example_caption": "一口で“らしさ”が伝わる新作アイテム。\n\n軽くて丈夫、毎日使ってもヘタらない素材を採用しました。デザインはシンプルだけど細部まで丁寧に作られていて、スタイルを選ばず使えるのが魅力。\n\n実際に使ってみると、見た目以上に収納力があり、普段使いにも旅行にもぴったり。シーンを選ばず活躍してくれる万能アイテムです。\n\n#新作 #バッグ #普段使い #毎日使える"
-    },
-    {
-      "name": "location",
-      "caption_structure": [
-        "一言キャッチ（雰囲気・全体印象）",
-        "場所・ロケーションの概要",
-        "雰囲気の特徴（光・音・香り・空気感など）",
-        "魅力・メリット（歴史・特長・価値）",
-        "おすすめの楽しみ方（時間帯など）",
-        "ハッシュタグ"
-      ],
-      "writing_style": {
-        "tone": "neutral",
-        "emoji_usage": "1〜3個",
-        "sentence_length": "中",
-        "formatting": "自然な改行",
-        "punctuation": "句点あり"
-      },
-      "hashtag_pattern": [
-        "#地域名",
-        "#スポット名",
-        "#travel",
-        "#location"
-      ],
-      "example_structure": [
-        "① 雰囲気のキャッチ",
-        "② 場所の簡易説明",
-        "③ 特徴・雰囲気の描写",
-        "④ 魅力やメリット",
-        "⑤ おすすめの楽しみ方",
-        "⑥ #locaitonタグ"
-      ],
-      "example_caption": "光がやさしく差し込む静かなロケーション。\n\nここは市街地から少し離れた場所にある、小さな隠れ家のようなスポット。周りは自然に囲まれていて、風の音が心地よく響きます。\n\n景色はシンプルだけど奥行きがあり、眺めているだけでリフレッシュできる場所。特に朝の時間帯は光が柔らかく、澄んだ空気が感じられておすすめです。\n\n#京都 #隠れ家スポット #travel #locationguide"
-    },
-    {
-      "name": "tips",
-      "caption_structure": [
-        "結論（要点）",
-        "背景・問題の提示",
-        "役立つ具体的なポイント（箇条書き可）",
-        "実践例・応用アイデア",
-        "まとめ（行動喚起・振り返り）",
-        "ハッシュタグ"
-      ],
-      "writing_style": {
-        "tone": "educational",
-        "emoji_usage": "0〜1個",
-        "sentence_length": "短め",
-        "formatting": "箇条書き推奨",
-        "punctuation": "句点あり"
-      },
-      "hashtag_pattern": [
-        "#tips",
-        "#howto",
-        "#ノウハウ",
-        "#学び"
-      ],
-      "example_structure": [
-        "① 結論・要点",
-        "② 背景説明",
-        "③ 具体的ポイント",
-        "④ 応用方法",
-        "⑤ まとめ",
-        "⑥ #tipsタグ"
-      ],
-      "example_caption": "結論：作業効率は“見える化”で大きく変わる。\n\n多くの人がつまずく理由は、タスクの全体像が曖昧で作業の優先順位が決まらないから。\n\n✔ まずはタスクを書き出す\n✔ 優先順位を3段階に分ける\n✔ 30分単位で進捗を区切る\n\nこの3つを意識するだけで、日々の作業効率が驚くほど良くなります。\n\n#tips #howto #作業効率化"
-    },
-    {
-      "name": "story",
-      "caption_structure": [
-        "出来事の概要",
-        "その時の状況・背景",
-        "感じたこと・気づき",
-        "学び・読者へのメッセージ",
-        "まとめの一言",
-        "ハッシュタグ"
-      ],
-      "writing_style": {
-        "tone": "emotional",
-        "emoji_usage": "0〜2個",
+    ],
+    "writing_style": {
+        "tone": "calm & sacred",
+        "emoji_usage": "1〜3個程度、雰囲気に合うもの",
         "sentence_length": "中〜長め",
-        "formatting": "感情を強調する改行",
-        "punctuation": "句点あり"
-      },
-      "hashtag_pattern": [
-        "#story",
-        "#体験談",
-        "#日常の気づき"
-      ],
-      "example_structure": [
-        "① 出来事",
-        "② 背景",
-        "③ 感じたこと",
-        "④ メッセージ",
-        "⑤ まとめ",
-        "⑥ #storyタグ"
-      ],
-      "example_caption": "今日、ふとしたきっかけで昔の友人に再会しました。\n\n仕事や日常に追われる中で忘れていた大切な感覚を思い出し、なんだか胸が温かくなりました。何気ない瞬間が、心に残る特別な時間になることってあるんですね。\n\n“忙しい時こそ、立ち止まる余裕を。”\nそんなメッセージを自分にも伝えたい日でした。\n\n#story #日常 #気づき"
+        "formatting": "静かな余白を意識した改行",
+        "punctuation": "句点少なめ / 英語混在OK"
+    },
+    "hashtag_pattern": [
+        "#場所名",
+        "#地域名",
+        "#spiritual",
+        "#shrine",
+        "#torutour"
+    ],
+    "example_structure": [
+        "① 神秘的な雰囲気を伝える一言キャッチ",
+        "② 聖地の背景・歴史・位置を説明",
+        "③ 観光地とは異なる特別性を強調",
+        "④ 実際の体験内容・儀式的な流れ",
+        "⑤ 心がどう動くか、精神的な効果",
+        "⑥ 訪問を促すメッセージ",
+        "⑦ ハッシュタグ"
+    ],
+    "example_caption": "Hidden deep in the mountains of Kyoto lies Kuzuryu Taisha — a sacred shrine where silence speaks louder than words. 🐉✨\n\nThis is not a tourist spot, but a place of prayer, purity, and reflection.\n\nJoin TORU TOUR for an exclusive private visit: drive through Yase’s forest roads, offer your prayers to the White Dragon God, and feel Japan’s spiritual heart.\n\n#KuzuryuTaisha #Kyoto #SpiritualJapan #Shrine #ToruTour"
     },
     {
-      "name": "announcement",
-      "caption_structure": [
-        "お知らせ内容の要点",
-        "詳細（日時・場所・対象）",
-        "ユーザーへの影響・メリット",
-        "注意事項・補足",
-        "次のアクション（案内・CTA）",
+    "name": "private_travel_support",
+    "caption_structure": [
+        "イントロキャッチ",
+        "説明",
+        "特徴",
+        "例",
+        "ターゲット層",
+        "紹介",
+        "締めのメッセージ",
         "ハッシュタグ"
-      ],
-      "writing_style": {
-        "tone": "formal",
-        "emoji_usage": "0〜1個",
-        "sentence_length": "短め〜中",
-        "formatting": "箇条書き可",
-        "punctuation": "句点あり"
-      },
-      "hashtag_pattern": [
-        "#お知らせ",
-        "#information",
-        "#news"
-      ],
-      "example_structure": [
-        "① 要点",
-        "② 詳細",
-        "③ メリット・影響",
-        "④ 注意事項",
-        "⑤ 次のアクション",
-        "⑥ #newsタグ"
-      ],
-      "example_caption": "【営業時間変更のお知らせ】\n\n明日より、平日の営業時間が下記の通り変更となります。\n- 旧：11:00〜21:00\n- 新：12:00〜22:00\n\nより快適にご利用いただけるよう、サービス改善の一環として実施いたします。\n\nご理解のほどよろしくお願いいたします。\n\n#お知らせ #営業時間変更 #information"
+    ],
+    "writing_style": {
+        "tone": "friendly & supportive",
+        "emoji_usage": "2〜5個程度、親しみやすいもの",
+        "sentence_length": "中〜長め",
+        "formatting": "読みやすく段落分け",
+        "punctuation": "柔らかい句読点"
     },
-    {
-      "name": "case",
-      "caption_structure": [
-        "事例・ケースの概要",
-        "Before（課題・状態）",
-        "After（改善・結果）",
-        "成功のポイント",
-        "まとめ（学び・次の行動）",
-        "ハッシュタグ"
-      ],
-      "writing_style": {
-        "tone": "professional",
-        "emoji_usage": "0〜1個",
-        "sentence_length": "中",
-        "formatting": "箇条書き中心",
-        "punctuation": "句点あり"
-      },
-      "hashtag_pattern": [
-        "#事例",
-        "#beforeafter",
-        "#改善"
-      ],
-      "example_structure": [
-        "① 事例概要",
-        "② Before",
-        "③ After",
-        "④ ポイント",
-        "⑤ 学び",
-        "⑥ #caseタグ"
-      ],
-      "example_caption": "【改善事例】\n\n以前は注文対応が追いつかず、ピーク時には最大30分以上の待ち時間が発生していました。\n\n導入後は、業務フローの自動化によって待ち時間が平均10分以下に。スタッフの負担が大幅に改善され、顧客満足度も向上しました。\n\n今回の成功ポイントは、作業の“分解”と“可視化”。小さな改善の積み重ねが、大きな変化を生みました。\n\n#事例 #beforeafter #改善"
+    "hashtag_pattern": [
+        "#地域名",
+        "#privatetour",
+        "#japantravel",
+        "#torutour",
+        "#kansai"
+    ],
+    "example_structure": [
+        "① 自由に旅できる魅力を伝えるキャッチ",
+        "② 訪問できる地域や範囲",
+        "③ プライベートカーの利便性・価値",
+        "④ 立ち寄りスポットの例（観光・カフェ・ショッピング）",
+        "⑤ 誰におすすめか（家族・カップル・ソロ）",
+        "⑥ 旅行中のサポート体制の紹介",
+        "⑦ 親しみのある締めメッセージ",
+        "⑧ ハッシュタグ"
+    ],
+    "example_caption": "Discover Japan your way — from Osaka to Nara, Shiga, and Kyoto 🚗💨\nWith TORU TOUR’s private car, travel freely, skip the crowds, and explore the heart of Kansai at your own pace.\n\nFrom deer in Nara and hidden cafés in Kyoto, to Onitsuka Tiger shopping in Shiga — every stop is chosen for beauty, comfort, and timing.\n\nPerfect for couples, families, or solo travelers who love the quiet side of Japan ✨\n\nAnd remember — even if you’re not joining a tour, if you ever need help during your trip in Japan, feel free to reach out anytime 💬\nWhether it’s travel advice, restaurant tips, or local guidance — I’m always happy to help. 🇯🇵\n\n#JapanTravel #Kansai #PrivateTour #ToruTour #Kyoto #Nara #Osaka #Shiga"
     }
+
+
   ]
 }

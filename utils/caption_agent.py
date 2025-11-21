@@ -289,7 +289,7 @@ Generate a final Instagram caption based on:
 2. Use rag_results as factual/context information
    - Read each { query, context }
    - Use context to enrich the caption with concrete details
-   - Do NOT copy context verbatim; rewrite naturally in Japanese
+   - Do NOT copy context verbatim; rewrite naturally in English
    - If some queries have no useful context, just ignore them
 
 3. Respect template writing_style when possible:
@@ -304,7 +304,7 @@ Generate a final Instagram caption based on:
      - hashtag_pattern in the template (if available)
      - business_type
      - title / content
-   - Use Japanese + romaji / English where natural
+   - Use English 
    - Put all hashtags in the last 1〜2 lines
 
 5. Very important:
