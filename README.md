@@ -58,16 +58,10 @@ auto_post_instagram(user_input, image_paths, templates)
 ## 依存関係ダイアグラム
 ```mermaid
 flowchart TD
-  U[User input<br/>business_type/title/direction<br/>image paths/templates] --> M[main.auto_post_instagram]
-  M --> C[caption_agent.generate_instagram_caption]
-  C --> TS[Template Selector<br/>run_template_selector → OpenAI]
-  C --> CP[Caption Planner<br/>run_caption_planner → OpenAI]
-  CP --> RAG[web_rag_search → Serper API]
-  CP --> CW[Caption Writer<br/>run_caption_writer → OpenAI]
+  IN[Input<br/>business_type/title/direction<br/>image paths/templates] --> TS[run_template_selector]
+  TS --> CP[run_caption_planner]
+  CP --> RAG[RAG<br/>web_rag_search → Serper API]
+  CP --> CW[run_caption_writer]
   RAG --> CW
-  CW --> CAP[final caption]
-  CAP --> P[post_instagram.post_to_instagram]
-  M --> P
-  P --> GCS[Google Cloud Storage]
-  P --> IG[Instagram Graph API<br/>Carousel publish]
+  CW --> OUT[投稿 (Instagram への投稿)]
 ```
