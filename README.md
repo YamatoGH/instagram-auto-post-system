@@ -37,16 +37,24 @@ Instagram へ「キャプション生成 → 画像アップロード → カル
 ## 依存関係ダイアグラム
 ```mermaid
 flowchart TD
-  U[User input<br/>business_type/title/direction<br/>image paths/templates] --> M[main.auto_post_instagram]
-  M --> C[caption_agent.generate_instagram_caption]
-  C --> TS[Template Selector<br/>run_template_selector → OpenAI]
-  C --> CP[Caption Planner<br/>run_caption_planner → OpenAI]
-  CP --> RAG[web_rag_search → Serper API]
-  CP --> CW[Caption Writer<br/>run_caption_writer → OpenAI]
-  RAG --> CW
-  CW --> CAP[final caption]
-  CAP --> P[post_instagram.post_to_instagram]
-  M --> P
-  P --> GCS[Google Cloud Storage]
-  P --> IG[Instagram Graph API<br/>Carousel publish]
-```
+    U[User input: business_type / title / direction / image paths / templates] --> M[main_auto_post_instagram]
+
+    M --> C[caption_agent_generate_instagram_caption]
+
+    C --> TS[Template Selector<br>run_template_selector → OpenAI]
+    C --> CP[Caption Planner<br>run_caption_planner → OpenAI]
+
+    CP --> RAG[web_rag_search → Serper API]
+    CP --> CW[Caption Writer<br>run_caption_writer → OpenAI]
+
+    RAG --> CW
+
+    CW --> CAP[final caption]
+
+    CAP --> P[post_instagram_post_to_instagram]
+
+    M --> P
+
+    P --> GCS[Google Cloud Storage]
+    P --> IG[Instagram Graph API<br>Carousel publish]
+
