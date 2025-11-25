@@ -15,6 +15,8 @@ Auto pipeline for Instagram: generate caption → upload images → post a carou
   - `create_child_media` → `publish_carousel`: create child media then publish the carousel via Instagram Graph API.
   - `post_to_instagram()`: takes image paths + caption and completes the post.
 - `utils/llm.py`: thin wrapper for OpenAI Chat Completions (`run_gpt`, `run_gpt_json`).
+- `utils/template_generator.py` (template builder):
+  - `generate_template_from_post`: turn an existing caption into a reusable template JSON that matches `utils/template_example.json`.
 - `utils/template_example.json`: sample templates (structure, style, hashtags).
 
 ## Required environment variables (.env supported)
@@ -47,6 +49,27 @@ with open("utils/template_example.json", "r", encoding="utf-8") as f:
 
 image_paths = ["images/sample1.png", "images/sample2.png"]
 auto_post_instagram(user_input, image_paths, templates)
+```
+
+## Generate a template from a real caption
+If you like the style or structure of an existing post, convert it into a reusable template and feed it back into the caption pipeline.
+
+```python
+import json
+from utils.template_generator import generate_template_from_post
+
+caption_text = """
+Paste the original caption text here as-is.
+"""
+
+# Create one template dict that matches utils/template_example.json
+template = generate_template_from_post(caption_text)
+
+with open("utils/template_generated.json", "w", encoding="utf-8") as f:
+    json.dump(template, f, ensure_ascii=False, indent=2)
+
+# You can now pass this template back into the main flow
+templates = {"categories": [template]}
 ```
 
 ## Dependency diagram
