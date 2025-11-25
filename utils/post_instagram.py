@@ -9,7 +9,7 @@ from google.cloud import storage
 # ----------------------------------------
 dotenv.load_dotenv()
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 GCS_BUCKET_NAME = os.getenv("GCS_BUCKET_NAME")
 IG_USER_ID = os.getenv("IG_USER_ID")
 ACCESS_TOKEN = os.getenv("IG_ACCESS_TOKEN")
@@ -18,8 +18,29 @@ ACCESS_TOKEN = os.getenv("IG_ACCESS_TOKEN")
 # ========================================
 #  GCS アップロード（署名付きURL）
 # ========================================
+#def upload_to_gcs(local_path, dest_path):
+    #"""ローカル画像を GCS にアップロードし、署名付きURL を生成して返す"""
+    #client = storage.Client()
+    #bucket = client.bucket(GCS_BUCKET_NAME)
+    #blob = bucket.blob(dest_path)
+
+    # アップロード
+    #blob.upload_from_filename(local_path)
+
+    # 署名付きURL（有効期限：1時間）
+    # url = blob.generate_signed_url(
+    #    version="v4",
+    #    expiration=3600,
+    #    method="GET"
+    #)
+
+    # 公開URLを直接返す（署名不要）
+    #url = f"https://storage.googleapis.com/{GCS_BUCKET_NAME}/{dest_path}"
+
+
+    #return url
+
 def upload_to_gcs(local_path, dest_path):
-    """ローカル画像を GCS にアップロードし、署名付きURL を生成して返す"""
     client = storage.Client()
     bucket = client.bucket(GCS_BUCKET_NAME)
     blob = bucket.blob(dest_path)
@@ -27,14 +48,13 @@ def upload_to_gcs(local_path, dest_path):
     # アップロード
     blob.upload_from_filename(local_path)
 
-    # 署名付きURL（有効期限：1時間）
-    url = blob.generate_signed_url(
-        version="v4",
-        expiration=3600,
-        method="GET"
-    )
+    # UBLA なので make_public() は不要（むしろ使うとエラー）
+    # blob.make_public()  ← 削除
 
-    return url
+    # 公開URL（Instagram がアクセス可能）
+    return f"https://storage.googleapis.com/{GCS_BUCKET_NAME}/{dest_path}"
+
+
 
 
 # ========================================

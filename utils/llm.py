@@ -4,6 +4,7 @@ Helper for calling the GPT5-nano chat model with a prompt and conversation histo
 
 import json
 from typing import Dict, List, Optional, Sequence
+import os
 
 try:
     # Load environment variables from a local .env file when available.
@@ -18,10 +19,42 @@ from openai import OpenAI
 
 ChatMessage = Dict[str, str]
 
-DEFAULT_MODEL = "gpt-5-nano"
-JSON_ONLY_SYSTEM_PROMPT = "You are a strict JSON responder. Reply with a single JSON object and nothing else."
+DEFAULT_MODEL = "gpt-4.1-nano"
+JSON_ONLY_SYSTEM_PROMPT = (
+    "You are a strict JSON responder. Reply with exactly one JSON object and nothing else; "
+    "no markdown, no code fences, no prose. If unsure, return an object with an 'error' field."
+)
 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI()
+
+
+def _as_response_input(messages: Sequence[ChatMessage]) -> List[Dict[str, object]]:
+    """
+    Convert chat-style messages to the structured input expected by the
+    Responses API.
+    """
+    return [
+        {
+            "role": item["role"],
+            "content": [{"type": "input_text", "text": item["content"]}],
+        }
+        for item in messages
+    ]
+
+
+def _extract_output_text(response) -> str:
+    """
+    Safely pull the model's text output from a Responses API reply.
+    """
+    text = getattr(response, "output_text", None)
+    if text:
+        return text.strip()
+
+    try:
+        return response.output[0].content[0].text.strip()
+    except Exception as exc:  # pragma: no cover - defensive fallback
+        raise ValueError("Model response did not include text output.") from exc
 
 
 def build_messages(prompt: str, history: Optional[Sequence[ChatMessage]] = None) -> List[ChatMessage]:
@@ -53,23 +86,22 @@ def run_gpt(
     model: str = DEFAULT_MODEL,
     max_completion_tokens: Optional[int] = None,
 ) -> str:
-    """
-    Call GPT5-nano with the given prompt and conversation history and return the text reply.
 
-    Args:
-        prompt: New user input to send.
-        history: Prior chat messages (will be sent before the new prompt).
-        model: Model name to use; defaults to GPT5-nano.
-        temperature: Sampling temperature for creativity control.
-        max_tokens: Optional limit for the reply length.
-    """
     messages = build_messages(prompt, history)
-    response = client.chat.completions.create(
+
+    response = client.responses.create(
         model=model,
-        messages=messages,
-        max_completion_tokens=max_completion_tokens,
+        input=[
+            {
+                "role": msg["role"],
+                "content": [{"type": "input_text", "text": msg["content"]}],
+            }
+            for msg in messages
+        ],
+        max_output_tokens=max_completion_tokens,
     )
-    return response.choices[0].message.content.strip()
+
+    return response.output[0].content[0].text
 
 
 def run_gpt_json(
@@ -78,33 +110,21 @@ def run_gpt_json(
     *,
     model: str = DEFAULT_MODEL,
     max_completion_tokens: Optional[int] = None,
-    parse_json: bool = True,
 ):
-    """
-    Call GPT5-nano, forcing a JSON-only reply. Optionally parse into a Python object.
+    messages = build_messages(prompt, history)
 
-    Args:
-        prompt: New user input to send.
-        history: Prior chat messages (will be sent before the new prompt).
-        model: Model name to use; defaults to GPT5-nano.
-        temperature: Sampling temperature; defaults low to keep JSON stable.
-        max_tokens: Optional limit for the reply length.
-        parse_json: If True, parse and return a Python object; otherwise return the raw string.
-    """
-    messages = [{"role": "system", "content": JSON_ONLY_SYSTEM_PROMPT}]
-    messages += build_messages(prompt, history)
-
-    response = client.chat.completions.create(
+    response = client.responses.create(
         model=model,
-        messages=messages,
-        max_completion_tokens=max_completion_tokens,
-        response_format={"type": "json_object"},
+        input=[
+            {
+                "role": msg["role"],
+                "content": [{"type": "input_text", "text": msg["content"]}],
+            }
+            for msg in messages
+        ],
+        max_output_tokens=max_completion_tokens,
     )
-    content = response.choices[0].message.content.strip()
-    if not parse_json:
-        return content
+    print("DEBUG RAW RESPONSE:", response)
 
-    try:
-        return json.loads(content)
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Model response was not valid JSON: {content}") from exc
+    content = response.output[0].content[0].text
+    return json.loads(content)

@@ -79,8 +79,6 @@ def filter_templates(templates_json: Dict[str, Any], required_keys: List[str]) -
 def run_template_selector(
     user_input: Dict[str, Any],
     templates_json: Dict[str, Any],
-    *,
-    model: str = "gpt-4.1-mini",
 ):
     """
     module to get caption plan from template and user input.
@@ -103,8 +101,6 @@ def run_template_selector(
     return run_gpt_json(
         prompt=json.dumps(user_input, ensure_ascii=False),
         history=[{"role": "system", "content": system_prompt}],
-        model=model,
-        parse_json=True,
         max_completion_tokens=1024,
     )
 
@@ -166,8 +162,6 @@ def run_caption_planner(
     user_input: Dict[str, Any],
     selected_template: str,
     templates_json: Dict[str, Any],
-    *,
-    model: str = "gpt-4.1-mini",
 ):
     """
     Caption Planner:
@@ -205,8 +199,6 @@ def run_caption_planner(
     return run_gpt_json(
         prompt=json.dumps(payload, ensure_ascii=False),
         history=[{"role": "system", "content": system_prompt}],
-        model=model,
-        parse_json=True,
         max_completion_tokens=1024,
     )
 
@@ -324,8 +316,6 @@ def run_caption_writer(
     templates_json: Dict[str, Any],
     caption_plan_result: Dict[str, Any],
     rag_results: List[Dict[str, str]],
-    *,
-    model: str = "gpt-5-mini",
 ) -> str:
     """
     Caption Writer:
@@ -362,7 +352,6 @@ def run_caption_writer(
     caption = run_gpt(
         prompt=json.dumps(payload, ensure_ascii=False),
         history=[{"role": "system", "content": system_prompt}],
-        model=model,
         max_completion_tokens=2048,
     )
 
@@ -379,8 +368,6 @@ def run_caption_writer(
 def generate_instagram_caption(
     user_input: Dict[str, Any],
     templates_json: Dict[str, Any],
-    *,
-    model: str = "gpt-4.1-mini",
 ) -> Dict[str, Any]:
     """
     Instagram 自動投稿生成のフルパイプライン。
@@ -398,7 +385,6 @@ def generate_instagram_caption(
     selector_output = run_template_selector(
         user_input=user_input,
         templates_json=templates_json,
-        model=model
     )
     selected_template = selector_output["selected_template"]
 
@@ -409,7 +395,6 @@ def generate_instagram_caption(
         user_input=user_input,
         selected_template=selected_template,
         templates_json=templates_json,
-        model=model
     )
 
     # 生成されたクエリ
