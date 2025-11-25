@@ -102,6 +102,7 @@ def run_gpt(
     )
 
     print("DEBUG RAW PROMPT:", prompt)
+    print("DEBUG RAW HISTORY:", history)
     print("DEBUG RAW RESPONSE:", response)
     return response.output[0].content[0].text
 
@@ -127,6 +128,7 @@ def run_gpt_json(
         max_output_tokens=max_completion_tokens,
     )
     print("DEBUG RAW PROMPT:", prompt)
+    print("DEBUG RAW HISTORY:", history)
     print("DEBUG RAW RESPONSE:", response)
 
     content = response.output[0].content[0].text
