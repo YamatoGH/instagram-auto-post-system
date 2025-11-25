@@ -1,80 +1,78 @@
 {
   "categories": [
-   {
-    "name": "spiritual_location",
-    "caption_structure": [
-        "イントロキャッチ",
-        "場所の特徴",
-        "通常の観光地と異なる点",
-        "体験内容",
-        "得られる感情・気づき",
-        "締めメッセージ",
+    {
+      "name": "spiritual_location",
+      "caption_structure": [
+        "イントロキャッチ（場所・体験の一言紹介）",
+        "場所やコンセプトの概要説明",
+        "一般的な観光地との違い・特別感の提示",
+        "体験内容や過ごし方の具体的イメージ",
+        "得られる感情・気づき・内面の変化",
+        "訪問を促す締めメッセージ（CTA）",
         "ハッシュタグ"
-    ],
-    "writing_style": {
-        "tone": "calm & sacred",
-        "emoji_usage": "1〜3個程度、雰囲気に合うもの",
-        "sentence_length": "中〜長め",
-        "formatting": "静かな余白を意識した改行",
-        "punctuation": "句点少なめ / 英語混在OK"
-    },
-    "hashtag_pattern": [
+      ],
+      "writing_style": {
+        "tone": "落ち着いた・神聖なトーン（calm & sacred）",
+        "emoji_usage": "1〜3個程度。世界観を壊さない控えめな絵文字のみ",
+        "sentence_length": "中〜長め。ゆっくり読ませるリズムで記述",
+        "formatting": "段落ごとに改行し、余白を多めに取る",
+        "punctuation": "句点は少なめ。読点や改行でリズムを作る（英語混在も可）"
+      },
+      "hashtag_pattern": [
         "#場所名",
         "#地域名",
-        "#spiritual",
-        "#shrine",
-        "#torutour"
-    ],
-    "example_structure": [
-        "① 神秘的な雰囲気を伝える一言キャッチ",
-        "② 聖地の背景・歴史・位置を説明",
-        "③ 観光地とは異なる特別性を強調",
-        "④ 実際の体験内容・儀式的な流れ",
-        "⑤ 心がどう動くか、精神的な効果",
-        "⑥ 訪問を促すメッセージ",
-        "⑦ ハッシュタグ"
-    ],
-    "example_caption": "Hidden deep in the mountains of Kyoto lies Kuzuryu Taisha — a sacred shrine where silence speaks louder than words. 🐉✨\n\nThis is not a tourist spot, but a place of prayer, purity, and reflection.\n\nJoin TORU TOUR for an exclusive private visit: drive through Yase’s forest roads, offer your prayers to the White Dragon God, and feel Japan’s spiritual heart.\n\n#KuzuryuTaisha #Kyoto #SpiritualJapan #Shrine #ToruTour"
+        "#カテゴリータグ（例：#spiritualspot）",
+        "#文化・宗教タグ（例：#shrine など）",
+        "#ブランド名・サービス名"
+      ],
+      "example_structure": [
+        "① 神秘的な雰囲気を一言で伝えるキャッチ",
+        "② 聖地の背景・歴史・場所などの基本情報",
+        "③ 一般的な観光地とは異なる特別性・雰囲気の強調",
+        "④ 実際にどのような体験・流れがあるかを説明",
+        "⑤ 体験によって得られる感情・心の変化・気づき",
+        "⑥ 訪問や予約を促す静かな誘いのメッセージ",
+        "⑦ 関連するハッシュタグの記載"
+      ],
+      "example_caption": "京都の山奥深くに佇む『九頭竜大社』——言葉よりも静寂が多くを語る、神聖な場所です。🐉✨\n\nここは観光目的のスポットではなく、祈りと浄化、そして内面に向き合うための場所。\n\nTORU TOUR では、八瀬の森道を走り抜け、白龍大神へ祈りを捧げる特別な参拝体験をご案内します。日本の“精神性”を静かに感じられる時間です。\n\n#九頭竜大社 #京都 #スピリチュアルスポット #神社巡り #ToruTour"
     },
     {
-    "name": "private_travel_support",
-    "caption_structure": [
-        "イントロキャッチ",
-        "説明",
-        "特徴",
-        "例",
-        "ターゲット層",
-        "紹介",
-        "締めのメッセージ",
+      "name": "private_travel_support",
+      "caption_structure": [
+        "イントロキャッチ（自由さ・快適さを伝える一言）",
+        "対応エリアやサービス全体の概要説明",
+        "移動手段・サポート内容の特徴やメリット",
+        "立ち寄りスポットや過ごし方の具体例",
+        "おすすめの利用シーン・ターゲット層の提示",
+        "予約・相談方法やサポート体制の紹介",
+        "親しみのある締めメッセージ・CTA",
         "ハッシュタグ"
-    ],
-    "writing_style": {
-        "tone": "friendly & supportive",
-        "emoji_usage": "2〜5個程度、親しみやすいもの",
-        "sentence_length": "中〜長め",
-        "formatting": "読みやすく段落分け",
-        "punctuation": "柔らかい句読点"
-    },
-    "hashtag_pattern": [
+      ],
+      "writing_style": {
+        "tone": "friendly & supportive（親しみやすく寄り添うトーン）",
+        "emoji_usage": "2〜5個程度。ポジティブで旅行と相性の良い絵文字を散りばめる",
+        "sentence_length": "中〜長め。説明とワクワク感のバランスを取る",
+        "formatting": "2〜4行ごとに段落を分け、読みやすく配置",
+        "punctuation": "「、」「。」を基本としつつ、！や絵文字で柔らかさを出す"
+      },
+      "hashtag_pattern": [
         "#地域名",
-        "#privatetour",
-        "#japantravel",
-        "#torutour",
-        "#kansai"
-    ],
-    "example_structure": [
-        "① 自由に旅できる魅力を伝えるキャッチ",
-        "② 訪問できる地域や範囲",
-        "③ プライベートカーの利便性・価値",
-        "④ 立ち寄りスポットの例（観光・カフェ・ショッピング）",
-        "⑤ 誰におすすめか（家族・カップル・ソロ）",
-        "⑥ 旅行中のサポート体制の紹介",
-        "⑦ 親しみのある締めメッセージ",
-        "⑧ ハッシュタグ"
-    ],
-    "example_caption": "Discover Japan your way — from Osaka to Nara, Shiga, and Kyoto 🚗💨\nWith TORU TOUR’s private car, travel freely, skip the crowds, and explore the heart of Kansai at your own pace.\n\nFrom deer in Nara and hidden cafés in Kyoto, to Onitsuka Tiger shopping in Shiga — every stop is chosen for beauty, comfort, and timing.\n\nPerfect for couples, families, or solo travelers who love the quiet side of Japan ✨\n\nAnd remember — even if you’re not joining a tour, if you ever need help during your trip in Japan, feel free to reach out anytime 💬\nWhether it’s travel advice, restaurant tips, or local guidance — I’m always happy to help. 🇯🇵\n\n#JapanTravel #Kansai #PrivateTour #ToruTour #Kyoto #Nara #Osaka #Shiga"
+        "#旅行カテゴリータグ（例：#privatetour など）",
+        "#サービス名・ブランド名",
+        "#ツアー・プラン名",
+        "#ターゲット・シーン（例：#familytrip #coupletrip など）"
+      ],
+      "example_structure": [
+        "① 自由に旅できる魅力を一言で伝えるキャッチ",
+        "② 訪問可能なエリアやサービス内容の全体像",
+        "③ プライベートカーやサポートの利便性・価値の説明",
+        "④ 実際に立ち寄れるスポットや楽しみ方の例示",
+        "⑤ 家族・カップル・ソロなど、特におすすめの利用者像",
+        "⑥ 旅行中のサポートや相談ができる体制の紹介",
+        "⑦ 親しみのある締めのひと言と行動喚起",
+        "⑧ 関連するハッシュタグの記載"
+      ],
+      "example_caption": "大阪・奈良・滋賀・京都——関西をあなたのペースで自由に旅しませんか？🚗💨\nTORU TOUR のプライベートカーなら、混雑を避けながら、静かで美しいスポットを快適に巡ることができます。\n\n奈良の鹿、京都の隠れ家カフェ、滋賀でのショッピングなど、寄り道スポットもあなたの好みに合わせて自由にアレンジ✨\n\nカップル・家族旅行・一人旅まで、どんな旅でもぴったり。\n旅行中の相談も日本語・英語でいつでもサポートします💬🇯🇵\n\n#関西旅行 #プライベートツアー #ToruTour #京都 #奈良 #大阪 #滋賀"
     }
-
-
   ]
 }
